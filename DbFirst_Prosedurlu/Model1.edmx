@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Db_first_uygulama2Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Musteriler">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AdSoyad" Type="varchar" MaxLength="50" />
+          <Property Name="Tc" Type="char" MaxLength="11" />
+          <Property Name="Urun" Type="varchar" MaxLength="50" />
+          <Property Name="Fiyat" Type="smallmoney" />
+        </EntityType>
+        <Function Name="MAd_Ara" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="adara" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="MGuncelle" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+          <Parameter Name="adsoyad" Type="varchar" Mode="In" />
+          <Parameter Name="tc" Type="char" Mode="In" />
+          <Parameter Name="urun" Type="varchar" Mode="In" />
+          <Parameter Name="fiyat" Type="smallmoney" Mode="In" />
+        </Function>
+        <Function Name="MKaydet" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="adsoyad" Type="varchar" Mode="In" />
+          <Parameter Name="tc" Type="char" Mode="In" />
+          <Parameter Name="urun" Type="varchar" Mode="In" />
+          <Parameter Name="fiyat" Type="smallmoney" Mode="In" />
+        </Function>
+        <Function Name="MListele" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="MSil" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+        </Function>
+        <EntityContainer Name="Db_first_uygulama2ModelStoreContainer">
+          <EntitySet Name="Musteriler" EntityType="Self.Musteriler" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Db_first_uygulama2Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Musteriler">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AdSoyad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Tc" Type="String" MaxLength="11" FixedLength="true" Unicode="false" />
+          <Property Name="Urun" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Fiyat" Type="Decimal" Precision="10" Scale="4" />
+        </EntityType>
+        <EntityContainer Name="Db_first_uygulama2Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Musterilers" EntityType="Self.Musteriler" />
+          <FunctionImport Name="MAd_Ara" ReturnType="Collection(Db_first_uygulama2Model.MAd_Ara_Result)">
+            <Parameter Name="adara" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="MGuncelle">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+            <Parameter Name="adsoyad" Mode="In" Type="String" />
+            <Parameter Name="tc" Mode="In" Type="String" />
+            <Parameter Name="urun" Mode="In" Type="String" />
+            <Parameter Name="fiyat" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="MKaydet">
+            <Parameter Name="adsoyad" Mode="In" Type="String" />
+            <Parameter Name="tc" Mode="In" Type="String" />
+            <Parameter Name="urun" Mode="In" Type="String" />
+            <Parameter Name="fiyat" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="MListele" ReturnType="Collection(Db_first_uygulama2Model.MListele_Result)" />
+          <FunctionImport Name="MSil">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="MAd_Ara_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="String" Name="AdSoyad" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Tc" Nullable="true" MaxLength="11" />
+          <Property Type="String" Name="Urun" Nullable="true" MaxLength="50" />
+          <Property Type="Decimal" Name="Fiyat" Nullable="true" Precision="10" />
+        </ComplexType>
+        <ComplexType Name="MListele_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="String" Name="AdSoyad" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Tc" Nullable="true" MaxLength="11" />
+          <Property Type="String" Name="Urun" Nullable="true" MaxLength="50" />
+          <Property Type="Decimal" Name="Fiyat" Nullable="true" Precision="10" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Db_first_uygulama2ModelStoreContainer" CdmEntityContainer="Db_first_uygulama2Entities">
+          <EntitySetMapping Name="Musterilers">
+            <EntityTypeMapping TypeName="Db_first_uygulama2Model.Musteriler">
+              <MappingFragment StoreEntitySet="Musteriler">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="AdSoyad" ColumnName="AdSoyad" />
+                <ScalarProperty Name="Tc" ColumnName="Tc" />
+                <ScalarProperty Name="Urun" ColumnName="Urun" />
+                <ScalarProperty Name="Fiyat" ColumnName="Fiyat" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="MAd_Ara" FunctionName="Db_first_uygulama2Model.Store.MAd_Ara">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Db_first_uygulama2Model.MAd_Ara_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="AdSoyad" ColumnName="AdSoyad" />
+                <ScalarProperty Name="Tc" ColumnName="Tc" />
+                <ScalarProperty Name="Urun" ColumnName="Urun" />
+                <ScalarProperty Name="Fiyat" ColumnName="Fiyat" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="MGuncelle" FunctionName="Db_first_uygulama2Model.Store.MGuncelle" />
+          <FunctionImportMapping FunctionImportName="MKaydet" FunctionName="Db_first_uygulama2Model.Store.MKaydet" />
+          <FunctionImportMapping FunctionImportName="MListele" FunctionName="Db_first_uygulama2Model.Store.MListele">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Db_first_uygulama2Model.MListele_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="AdSoyad" ColumnName="AdSoyad" />
+                <ScalarProperty Name="Tc" ColumnName="Tc" />
+                <ScalarProperty Name="Urun" ColumnName="Urun" />
+                <ScalarProperty Name="Fiyat" ColumnName="Fiyat" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="MSil" FunctionName="Db_first_uygulama2Model.Store.MSil" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

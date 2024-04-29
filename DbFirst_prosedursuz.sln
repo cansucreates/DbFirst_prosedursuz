@@ -5,6 +5,8 @@ VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DbFirst_prosedursuz", "DbFirst_prosedursuz\DbFirst_prosedursuz.csproj", "{71A49398-551C-412C-A5F9-4E7F480007A3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DbFirst_Prosedurlu", "DbFirst_Prosedurlu\DbFirst_Prosedurlu.csproj", "{22CB4757-69F1-4559-8EFC-2C4E0CD4EAC4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{71A49398-551C-412C-A5F9-4E7F480007A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{71A49398-551C-412C-A5F9-4E7F480007A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{71A49398-551C-412C-A5F9-4E7F480007A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22CB4757-69F1-4559-8EFC-2C4E0CD4EAC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22CB4757-69F1-4559-8EFC-2C4E0CD4EAC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22CB4757-69F1-4559-8EFC-2C4E0CD4EAC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22CB4757-69F1-4559-8EFC-2C4E0CD4EAC4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
